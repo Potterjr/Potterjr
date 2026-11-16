@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 452" width="800" height="452" role="img" aria-label="about_me.dart. class Chisanupong extends MobileDeveloper. Based in Bangkok, Thailand. Day job: WMS apps in Flutter, plus .NET services and SQL. Side projects: extendedscreen, hooktrans, api-to-model, file-order.">
+<title>about_me.dart. class Chisanupong extends MobileDeveloper. Based in Bangkok, Thailand. Day job: WMS apps in Flutter, plus .NET services and SQL. Side projects: extendedscreen, hooktrans, api-to-model, file-order.</title>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0A0F1F"/><stop offset="1" stop-color="#121A3C"/></linearGradient>
+<linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4FC3F7"/><stop offset="1" stop-color="#8B6CFF"/></linearGradient>
+<linearGradient id="accentD" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4FC3F7"/><stop offset="1" stop-color="#8B6CFF"/></linearGradient>
+<radialGradient id="glowA"><stop offset="0" stop-color="#4FC3F7" stop-opacity="0.26"/><stop offset="1" stop-color="#4FC3F7" stop-opacity="0"/></radialGradient>
+<radialGradient id="glowB"><stop offset="0" stop-color="#8B6CFF" stop-opacity="0.34"/><stop offset="1" stop-color="#8B6CFF" stop-opacity="0"/></radialGradient>
+<pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#FFFFFF" fill-opacity="0.07"/></pattern>
+<radialGradient id="fade" cx="0.8" cy="0.3" r=".75"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<mask id="gridMask"><rect width="800" height="452" fill="url(#fade)"/></mask>
+<clipPath id="frame"><rect width="800" height="452" rx="22"/></clipPath>
+
+</defs>
+<style>
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+.pulse{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}.blink{animation:blink 1.1s steps(1,end) infinite}@keyframes blink{0%{opacity:1}50%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g clip-path="url(#frame)">
+<rect width="800" height="452" fill="url(#bg)"/>
+<circle cx="700" cy="50" r="300" fill="url(#glowB)"/><circle cx="80" cy="470" r="260" fill="url(#glowA)"/>
+<rect width="800" height="452" fill="url(#dots)" mask="url(#gridMask)"/>
+
+<circle cx="28" cy="26" r="6" fill="#FF6B6B"/><circle cx="48" cy="26" r="6" fill="#FFC857"/><circle cx="68" cy="26" r="6" fill="#3DDC97"/>
+<rect x="96" y="11" width="176" height="30" rx="9" fill="#141C45" stroke="#2A3566"/>
+<circle cx="113" cy="26" r="4.5" fill="#4FC3F7"/>
+<text class="mono" x="125" y="31" font-size="14" font-weight="600" fill="#F4F7FF">about_me.dart</text>
+<rect x="588" y="11" width="188" height="30" rx="15" fill="#141C45" stroke="#2A3566"/>
+<circle class="pulse" cx="607" cy="26" r="4.5" fill="#3DDC97"/>
+<text class="mono" x="620" y="30.5" font-size="13.5" fill="#93A0C8">running on device</text>
+<path d="M0 52.5H800" stroke="#2A3566"/>
+<rect y="341" width="800" height="30" fill="#4FC3F7" fill-opacity=".08"/>
+<rect y="341" width="3" height="30" fill="#4FC3F7"/>
+<text class="mono" x="46" y="92" font-size="15" text-anchor="end" fill="#5D6A95">1</text><text class="mono" x="46" y="122" font-size="15" text-anchor="end" fill="#5D6A95">2</text><text class="mono" x="46" y="152" font-size="15" text-anchor="end" fill="#5D6A95">3</text><text class="mono" x="46" y="182" font-size="15" text-anchor="end" fill="#5D6A95">4</text><text class="mono" x="46" y="212" font-size="15" text-anchor="end" fill="#5D6A95">5</text><text class="mono" x="46" y="242" font-size="15" text-anchor="end" fill="#5D6A95">6</text><text class="mono" x="46" y="272" font-size="15" text-anchor="end" fill="#5D6A95">7</text><text class="mono" x="46" y="302" font-size="15" text-anchor="end" fill="#5D6A95">8</text><text class="mono" x="46" y="332" font-size="15" text-anchor="end" fill="#5D6A95">9</text><text class="mono" x="46" y="362" font-size="15" text-anchor="end" fill="#5D6A95">10</text><text class="mono" x="46" y="392" font-size="15" text-anchor="end" fill="#5D6A95">11</text>
+<text class="mono l0" x="66.0" y="92" font-size="20"><tspan fill="#8B6CFF">class</tspan><tspan fill="#4FC3F7"> Chisanupong</tspan><tspan fill="#8B6CFF"> extends</tspan><tspan fill="#4FC3F7"> MobileDeveloper</tspan><tspan fill="#93A0C8"> {</tspan></text><text class="mono l1" x="90.0" y="122" font-size="20"><tspan fill="#8B6CFF">final</tspan><tspan fill="#F4F7FF"> base</tspan><tspan fill="#93A0C8"> = </tspan><tspan fill="#3DDC97">'Bangkok, Thailand'</tspan><tspan fill="#93A0C8">;</tspan></text><text class="mono l2" x="90.0" y="152" font-size="20"><tspan fill="#8B6CFF">final</tspan><tspan fill="#F4F7FF"> dayJob</tspan><tspan fill="#93A0C8"> = </tspan><tspan fill="#3DDC97">'WMS apps in Flutter'</tspan><tspan fill="#93A0C8">;</tspan></text><text class="mono l3" x="90.0" y="182" font-size="20"><tspan fill="#8B6CFF">final</tspan><tspan fill="#F4F7FF"> alsoOn</tspan><tspan fill="#93A0C8"> = </tspan><tspan fill="#3DDC97">'.NET services + SQL'</tspan><tspan fill="#93A0C8">;</tspan></text><text class="mono l4" x="90.0" y="212" font-size="20"><tspan fill="#8B6CFF">final</tspan><tspan fill="#F4F7FF"> sideProjects</tspan><tspan fill="#93A0C8"> = [</tspan></text><text class="mono l5" x="114.0" y="242" font-size="20"><tspan fill="#3DDC97">'extendedscreen'</tspan><tspan fill="#93A0C8">, </tspan><tspan fill="#3DDC97">'hooktrans'</tspan><tspan fill="#93A0C8">,</tspan></text><text class="mono l6" x="114.0" y="272" font-size="20"><tspan fill="#3DDC97">'api-to-model'</tspan><tspan fill="#93A0C8">, </tspan><tspan fill="#3DDC97">'file-order'</tspan><tspan fill="#93A0C8">,</tspan></text><text class="mono l7" x="90.0" y="302" font-size="20"><tspan fill="#93A0C8">];</tspan></text><text class="mono l8" x="66.0" y="332" font-size="20"></text><text class="mono l9" x="90.0" y="362" font-size="20"><tspan fill="#4FC3F7">bool</tspan><tspan fill="#8B6CFF"> get</tspan><tspan fill="#F4F7FF"> openToCollab</tspan><tspan fill="#93A0C8"> =&gt; </tspan><tspan fill="#8B6CFF">true</tspan><tspan fill="#93A0C8">;</tspan></text><text class="mono l10" x="66.0" y="392" font-size="20"><tspan fill="#93A0C8">}</tspan></text>
+<rect class="blink" x="454" y="345" width="10" height="23" rx="2" fill="#4FC3F7"/>
+
+</g>
+<rect x=".5" y=".5" width="799" height="451" rx="21.5" fill="none" stroke="#27315C"/>
+</svg>

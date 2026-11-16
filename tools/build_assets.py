@@ -88,12 +88,13 @@ def code(lines, x, y, lh, size, palette):
 
 NAME = "Chisanupong"
 ROLE = "Mobile Developer · Flutter + .NET"
+# Lines typed under the name in the banner: (text, seconds on screen).
 TYPED = [
-    "Hi there! I'm Chisanupong 👋",
-    "Mobile Developer · Flutter",
-    "WMS apps + the .NET services behind them",
-    "Building dev tools on the side",
-    "Based in Bangkok, Thailand",
+    (ROLE, 6.5),
+    ("Building WMS apps for the warehouse floor", 4.4),
+    ("…and the .NET services behind them", 4.4),
+    ("Dev tools on the side: VS Code extensions + more", 4.4),
+    ("Based in Bangkok, Thailand", 4.0),
 ]
 FLUTTER_DEEP, FLUTTER_SKY = "#02569B", "#13B9FD"
 
@@ -111,7 +112,7 @@ def wave_header(_t):
              "M0 0H1200V214C1010 172 800 240 600 212C400 184 190 204 0 232Z")
     back = ("M0 0H1200V222C990 268 770 188 570 226C380 262 180 222 0 250Z",
             "M0 0H1200V240C990 206 770 262 570 240C380 216 180 250 0 226Z")
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 270" width="1200" height="270" role="img" aria-label="{NAME}. {ROLE}">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 270" width="1200" height="270" role="img" aria-label="{NAME}. {ROLE}">
 <title>{NAME}. {ROLE}</title>
 <defs>
 <linearGradient id="g" x1="0" y1="0" x2="1.25" y2="0"><stop offset="0" stop-color="{FLUTTER_DEEP}"/><stop offset="1" stop-color="{FLUTTER_SKY}"/></linearGradient>
@@ -121,14 +122,14 @@ def wave_header(_t):
 <mask id="m"><rect width="1200" height="170" fill="url(#fade)"/><rect width="1200" height="170" fill="url(#fade2)"/></mask>
 <clipPath id="top"><rect width="1200" height="400" rx="18"/></clipPath>
 </defs>
-<style>.sans{{font-family:{SANS}}}</style>
+<style>.sans{{font-family:{SANS}}}.mono{{font-family:{MONO}}}</style>
 <g clip-path="url(#top)">
 {_wave(back[0], back[1], 17, .38)}
 {_wave(front[0], front[1], 11)}
 <rect width="1200" height="170" fill="url(#dots)" mask="url(#m)"/>
 </g>
 <text class="sans" x="600" y="108" text-anchor="middle" font-size="68" font-weight="800" letter-spacing="-1.5" fill="#fff">{NAME}</text>
-<text class="sans" x="600" y="150" text-anchor="middle" font-size="23" font-weight="500" fill="#fff" fill-opacity=".94">{ROLE}</text>
+{_typed(600, 147, 22, "#fff")}
 </svg>
 '''
 
@@ -151,30 +152,74 @@ def wave_footer(_t):
 '''
 
 
-def typing(t):
-    """Typed lines on a transparent background: each line sits on a path that
-    grows, so glyphs appear one at a time. Pure SMIL, no page colour needed."""
-    W, n = 640, len(TYPED)
-    color = "#54C5F8" if t is THEMES["dark"] else "#0175C2"
-    rows = []
-    for i, line in enumerate(TYPED):
+def _typed(cx, y, size, fill, span=1200):
+    """Typed lines: each sits on a path that grows across the span the centred
+    text occupies, so glyphs appear one at a time. Pure SMIL, transparent."""
+    adv, n, rows = size * 0.6, len(TYPED), []
+    for i, (line, dur) in enumerate(TYPED):
         begin = f"0s;d{n - 1}.end" if i == 0 else f"d{i - 1}.end"
-        # Grow the path only across the span the centred text occupies, so
-        # there is no dead time before the first glyph or after the last.
-        half = len(line) * 12.6 / 2 + 16
-        lo, hi = max(0, round(W / 2 - half)), min(W, round(W / 2 + half))
+        half = len(line) * adv / 2 + 18
+        lo, hi = max(0, round(cx - half)), min(span, round(cx + half))
         rows.append(
-            f'<path id="p{i}" fill="none"><animate id="d{i}" attributeName="d" begin="{begin}" dur="4.2s" fill="remove" '
-            f'values="m0,24 h{lo};m0,24 h{hi};m0,24 h{hi};m0,24 h{lo}" keyTimes="0;0.4;0.85;1"/></path>'
-            f'<text class="mono" x="{W // 2}" text-anchor="middle" dominant-baseline="middle" font-size="21" font-weight="600" fill="{color}">'
+            f'<path id="p{i}" fill="none"><animate id="d{i}" attributeName="d" begin="{begin}" dur="{dur}s" fill="remove" '
+            f'values="m0,{y} h{lo};m0,{y} h{hi};m0,{y} h{hi};m0,{y} h{lo}" keyTimes="0;{1.5 / dur:.3f};{1 - 0.6 / dur:.3f};1"/></path>'
+            f'<text class="mono" x="{cx}" text-anchor="middle" dominant-baseline="middle" font-size="{size}" font-weight="600" fill="{fill}">'
             f'<textPath href="#p{i}" xlink:href="#p{i}">{line}</textPath></text>'
         )
-    label = ". ".join(TYPED)
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {W} 48" width="{W}" height="48" role="img" aria-label="{label}">
-<style>.mono{{font-family:{MONO}}}</style>
-{"".join(rows)}
-</svg>
+    return "".join(rows)
+
+
+# ------------------------------------------------------------------- about card
+
+def about(t):
+    """About me, written as the Dart file it would be. Sits next to the phone."""
+    pal = dict(text=t["text"], muted=t["muted"], kw=t["b"], ty=t["a"], s=t["green"])
+    K, T, S, P, X = "kw", "ty", "s", "muted", "text"
+    lines = [
+        (0, [("class", K), (" Chisanupong", T), (" extends", K), (" MobileDeveloper", T), (" {", P)]),
+        (2, [("final", K), (" base", X), (" = ", P), ("'Bangkok, Thailand'", S), (";", P)]),
+        (2, [("final", K), (" dayJob", X), (" = ", P), ("'WMS apps in Flutter'", S), (";", P)]),
+        (2, [("final", K), (" alsoOn", X), (" = ", P), ("'.NET services + SQL'", S), (";", P)]),
+        (2, [("final", K), (" sideProjects", X), (" = [", P)]),
+        (4, [("'extendedscreen'", S), (", ", P), ("'hooktrans'", S), (",", P)]),
+        (4, [("'api-to-model'", S), (", ", P), ("'file-order'", S), (",", P)]),
+        (2, [("];", P)]),
+        (0, []),
+        (2, [("bool", T), (" get", K), (" openToCollab", X), (" =&gt; ", P), ("true", K), (";", P)]),
+        (0, [("}", P)]),
+    ]
+    x0, y0, lh, size = 66, 92, 30, 20
+    active = 9  # the line the cursor sits on
+    nums = "".join(
+        f'<text class="mono" x="46" y="{y0 + i * lh}" font-size="15" text-anchor="end" fill="{t["faint"]}">{i + 1}</text>'
+        for i in range(len(lines))
+    )
+    cursor_x = x0 + (2 + len("bool get openToCollab => true;")) * size * 0.6 + 4
+    css = (
+        ".pulse{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}"
+        ".blink{animation:blink 1.1s steps(1,end) infinite}@keyframes blink{0%{opacity:1}50%,100%{opacity:0}}"
+    )
+    glows = '<circle cx="700" cy="50" r="300" fill="url(#glowB)"/><circle cx="80" cy="470" r="260" fill="url(#glowA)"/>'
+    body = f'''
+<circle cx="28" cy="26" r="6" fill="#FF6B6B"/><circle cx="48" cy="26" r="6" fill="#FFC857"/><circle cx="68" cy="26" r="6" fill="#3DDC97"/>
+<rect x="96" y="11" width="176" height="30" rx="9" fill="{t['chip']}" stroke="{t['card_border']}"/>
+<circle cx="113" cy="26" r="4.5" fill="{t['a']}"/>
+<text class="mono" x="125" y="31" font-size="14" font-weight="600" fill="{t['text']}">about_me.dart</text>
+<rect x="588" y="11" width="188" height="30" rx="15" fill="{t['chip']}" stroke="{t['card_border']}"/>
+<circle class="pulse" cx="607" cy="26" r="4.5" fill="{t['green']}"/>
+<text class="mono" x="620" y="30.5" font-size="13.5" fill="{t['muted']}">running on device</text>
+<path d="M0 52.5H800" stroke="{t['card_border']}"/>
+<rect y="{y0 + active * lh - 21}" width="800" height="{lh}" fill="{t['a']}" fill-opacity=".08"/>
+<rect y="{y0 + active * lh - 21}" width="3" height="{lh}" fill="{t['a']}"/>
+{nums}
+{code(lines, x0, y0, lh, size, pal)}
+<rect class="blink" x="{cursor_x:.0f}" y="{y0 + active * lh - 17}" width="10" height="23" rx="2" fill="{t['a']}"/>
 '''
+    return frame(t, 800, 452, 22, body, css, "", glows,
+                 title="about_me.dart. class Chisanupong extends MobileDeveloper. Based in Bangkok, Thailand. "
+                       "Day job: WMS apps in Flutter, plus .NET services and SQL. "
+                       "Side projects: extendedscreen, hooktrans, api-to-model, file-order.",
+                 fade=(0.8, 0.3))
 
 
 # ------------------------------------------------------------------------ phone
@@ -445,7 +490,7 @@ def thumb_file_order(t):
 ASSETS = {
     "wave-header": (wave_header, False),
     "wave-footer": (wave_footer, False),
-    "typing": (typing, True),
+    "about": (about, True),
     "phone": (phone, False),
     "extendedscreen": (thumb_extendedscreen, True),
     "hooktrans": (thumb_hooktrans, True),

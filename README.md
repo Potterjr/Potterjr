@@ -1,60 +1,28 @@
-<!-- Header banner -->
+<!-- Banner: name, with a typed line underneath -->
 <img src="assets/wave-header.svg" width="100%" alt="Chisanupong. Mobile Developer · Flutter + .NET" />
 
 <div align="center">
-
-<!-- Typing header -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/typing-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/typing-light.svg">
-  <img src="assets/typing-dark.svg" width="560" alt="Hi there! I'm Chisanupong. Mobile Developer · Flutter. WMS apps + the .NET services behind them." />
-</picture>
 
 <p>
   <b>Flutter apps for the warehouse floor, the .NET services behind them,<br>and small tools that make a developer's day easier.</b>
 </p>
 
-<!-- Social badges -->
-<p>
-  <a href="https://github.com/Potterjr?tab=repositories"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+<!-- Stack, in the order I reach for it: mobile, backend, tooling -->
+<img src="https://skillicons.dev/icons?i=flutter,dart,swift,kotlin,dotnet,cs,ts,vscode,git,github&perline=10" alt="Flutter, Dart, Swift, Kotlin, .NET, C#, TypeScript, VS Code, Git, GitHub" />
+
+</div>
+
+<br>
+
+<!-- About me: the code on the left, running on the phone on the right -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/about-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/about-light.svg">
+    <img src="assets/about-dark.svg" width="66%" alt="about_me.dart. class Chisanupong extends MobileDeveloper. Based in Bangkok, Thailand. Day job: WMS apps in Flutter, plus .NET services and SQL. Side projects: extendedscreen, hooktrans, api-to-model, file-order." />
+  </picture>
+  <img src="assets/phone.svg" width="32%" alt="A phone showing a warehouse pick list that scans a barcode and ticks items off" />
 </p>
-
-</div>
-
-<br>
-
-## 🚀 About Me
-
-<table>
-<tr>
-<td width="60%" valign="top">
-
-- 📱 **Mobile Developer** building warehouse-management (WMS) apps with **Flutter**.
-- ⚙️ I also work on the **.NET** services and SQL those apps run on.
-- 🧰 I build my own tools: a second-monitor app, a real-time game translator, and VS Code extensions.
-- 💬 **Ask me about:** Flutter, platform channels (Swift & Kotlin), .NET APIs, and VS Code extensions.
-- 📍 Based in **Bangkok, Thailand** (UTC+7).
-
-</td>
-<td width="40%" align="center" valign="middle">
-
-<img src="assets/phone.svg" width="210" alt="A phone showing a warehouse pick list that scans a barcode and ticks items off" />
-
-</td>
-</tr>
-</table>
-
-<br>
-
-## 🛠️ Tech Arsenal
-
-<div align="center">
-
-| Mobile | Backend | Tools & Platforms |
-| :---: | :---: | :---: |
-| <img src="https://skillicons.dev/icons?i=flutter,dart,swift,kotlin&perline=4" alt="Flutter, Dart, Swift, Kotlin" /> | <img src="https://skillicons.dev/icons?i=dotnet,cs&perline=4" alt=".NET, C#" /> | <img src="https://skillicons.dev/icons?i=ts,vscode,git,github&perline=4" alt="TypeScript, VS Code, Git, GitHub" /> |
-
-</div>
 
 <br>
 
@@ -62,7 +30,7 @@
 
 <table>
 <tr>
-<td width="50%" align="center" valign="top">
+<td colspan="3" width="50%" valign="middle">
   <a href="https://github.com/Potterjr/extendedscreen">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/extendedscreen-dark.svg">
@@ -70,14 +38,18 @@
       <img src="assets/extendedscreen-dark.svg" width="100%" alt="A window sliding from a Mac onto an Android tablet used as a second display" />
     </picture>
   </a>
-  <br>
-  <a href="https://github.com/Potterjr/extendedscreen"><b>extendedscreen</b></a>
-  <br>
-  Use an Android tablet as a second display for a Mac over USB, with touch sent back as mouse input.
-  <br>
+</td>
+<td colspan="3" width="50%" valign="middle">
+  <h3><a href="https://github.com/Potterjr/extendedscreen">extendedscreen</a></h3>
+  Use an Android tablet as a second display for a Mac over USB.
+  <br><br>
+  The Mac encodes its screen as H.264 or H.265 and streams it through an <code>adb reverse</code> tunnel; touches come back as mouse input. One Flutter codebase builds both the macOS host and the Android client.
+  <br><br>
   <sub>Flutter · Swift · Kotlin</sub>
 </td>
-<td width="50%" align="center" valign="top">
+</tr>
+<tr>
+<td colspan="2" width="33%" align="center" valign="top">
   <a href="https://github.com/Potterjr/hooktrans">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/hooktrans-dark.svg">
@@ -92,9 +64,7 @@
   <br>
   <sub>Flutter · Apple Vision OCR · LM Studio</sub>
 </td>
-</tr>
-<tr>
-<td width="50%" align="center" valign="top">
+<td colspan="2" width="33%" align="center" valign="top">
   <a href="https://github.com/Potterjr/api-to-model">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/api-to-model-dark.svg">
@@ -109,7 +79,7 @@
   <br>
   <sub>TypeScript · VS Code API · Jest</sub>
 </td>
-<td width="50%" align="center" valign="top">
+<td colspan="2" width="33%" align="center" valign="top">
   <a href="https://github.com/Potterjr/file-order">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/file-order-dark.svg">
