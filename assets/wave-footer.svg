@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 130" width="1200" height="130" role="presentation">
+<defs>
+<linearGradient id="g" x1="-.25" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#13B9FD"/><stop offset="1" stop-color="#02569B"/></linearGradient>
+<clipPath id="bottom"><rect y="-300" width="1200" height="430" rx="18"/></clipPath>
+</defs>
+<g clip-path="url(#bottom)">
+<path fill="url(#g)" opacity="0.38" d="M0 130H1200V24C990 -6 770 66 570 34C380 4 180 34 0 40Z"><animate attributeName="d" dur="17s" repeatCount="indefinite" values="M0 130H1200V24C990 -6 770 66 570 34C380 4 180 34 0 40Z;M0 130H1200V10C990 44 770 -4 570 22C380 46 180 6 0 50Z;M0 130H1200V24C990 -6 770 66 570 34C380 4 180 34 0 40Z" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/></path>
+<path fill="url(#g)" opacity="1" d="M0 130H1200V48C1010 4 800 86 600 52C400 18 190 30 0 62Z"><animate attributeName="d" dur="11s" repeatCount="indefinite" values="M0 130H1200V48C1010 4 800 86 600 52C400 18 190 30 0 62Z;M0 130H1200V34C1010 70 800 10 600 40C400 70 190 60 0 30Z;M0 130H1200V48C1010 4 800 86 600 52C400 18 190 30 0 62Z" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/></path>
+</g>
+</svg>
