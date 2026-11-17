@@ -188,13 +188,14 @@ def about(t):
         (2, [("final", K), (" sideProjects", X), (" = [", P)]),
         (4, [("'extendedscreen'", S), (", ", P), ("'hooktrans'", S), (",", P)]),
         (4, [("'api-to-model'", S), (", ", P), ("'file-order'", S), (",", P)]),
+        (4, [("'sql-guard'", S), (",", P)]),
         (2, [("];", P)]),
         (0, []),
         (2, [("bool", T), (" get", K), (" openToCollab", X), (" =&gt; ", P), ("true", K), (";", P)]),
         (0, [("}", P)]),
     ]
     x0, y0, lh, size = 66, 92, 30, 20
-    active = 9  # the line the cursor sits on
+    active = 10  # the line the cursor sits on
     nums = "".join(
         f'<text class="mono" x="46" y="{y0 + i * lh}" font-size="17" text-anchor="end" fill="{t["faint"]}">{i + 1}</text>'
         for i in range(len(lines))
@@ -222,7 +223,7 @@ def about(t):
     return frame(t, 800, 452, 20, body, css, "", glows,
                  title="about_me.dart. class Chisanupong extends MobileDeveloper. Based in Bangkok, Thailand. "
                        "Day job: WMS apps in Flutter, plus .NET services and SQL. "
-                       "Side projects: extendedscreen, hooktrans, api-to-model, file-order.",
+                       "Side projects: extendedscreen, hooktrans, api-to-model, file-order, sql-guard.",
                  fade=(0.8, 0.3))
 
 
@@ -524,6 +525,53 @@ def thumb_file_order(t):
                  title="file-order: files in a sidebar tree reordered by priority number", fade=(0.5, 0.5))
 
 
+def thumb_sql_guard(t):
+    dark = t is THEMES["dark"]
+    danger = "#FF6B6B" if dark else "#C92A2A"
+    warn = "#FFC857" if dark else "#B45309"
+    pal = dict(text=t["text"], muted=t["muted"], kw=t["b"], s=t["green"])
+    K, X, S, P = "kw", "text", "s", "muted"
+    lines = [
+        (0, [("-- #region archive old orders", P)]),
+        (0, [("UPDATE", K), (" Orders", X), (" SET", K), (" Status", X), (" = ", P), ("'archived'", S)]),
+        (0, [("WHERE", K), (" CreatedAt", X), (" &lt; ", P), ("'2025-01-01'", S), (";", P)]),
+        (0, []),
+        (0, [("DELETE", K), (" FROM", K), (" OrderItems", X), (";", P)]),
+        (0, [("-- #endregion", P)]),
+    ]
+    x0, y0, lh, size = 58, 110, 24, 14
+    flagged = 4  # the statement the guard stops
+    css = (
+        ".flag{opacity:0;animation:flag 7s ease-out infinite}@keyframes flag{0%,12%{opacity:0}18%,86%{opacity:1}92%,100%{opacity:0}}"
+        ".dlg{opacity:0;animation:dlg 7s ease-out infinite}"
+        "@keyframes dlg{0%,20%{opacity:0;transform:translateY(8px)}27%,86%{opacity:1;transform:translateY(0)}92%,100%{opacity:0;transform:translateY(0)}}"
+    )
+    glows = '<circle cx="520" cy="40" r="230" fill="url(#glowB)"/><circle cx="70" cy="290" r="200" fill="url(#glowA)"/>'
+    body = f'''
+<rect x="36" y="34" width="528" height="232" rx="12" fill="{t['card']}" stroke="{t['card_border']}"/>
+<circle cx="57" cy="53" r="4" fill="{t['a']}"/>
+<text class="mono" x="68" y="57" font-size="12" font-weight="700" fill="{t['text']}">cleanup.sql</text>
+<path d="M36 70.5H564" stroke="{t['card_border']}"/>
+<text class="mono" x="{x0}" y="90" font-size="11" fill="{t['muted']}">▶ Run</text>
+<g class="flag"><rect x="37" y="{y0 + flagged * lh - 17}" width="526" height="{lh}" fill="{danger}" fill-opacity=".14"/><rect x="37" y="{y0 + flagged * lh - 17}" width="3" height="{lh}" fill="{danger}"/></g>
+{code(lines, x0, y0, lh, size, pal)}
+<g class="dlg">
+<rect x="266" y="134" width="286" height="122" rx="12" fill="#000" fill-opacity=".28"/>
+<rect x="262" y="128" width="286" height="122" rx="12" fill="{t['card']}" stroke="{danger}" stroke-width="1.5"/>
+<g transform="translate(280 144)" fill="none" stroke="{warn}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 1.5l7 2.6v5.2c0 4.3-2.9 7.6-7 9.2-4.1-1.6-7-4.9-7-9.2V4.1z" fill="{warn}" fill-opacity=".16"/><path d="M10 6.5v4.5M10 14v.1"/></g>
+<text class="sans" x="310" y="159" font-size="14.5" font-weight="700" fill="{t['text']}">DELETE without WHERE</text>
+<text class="sans" x="310" y="180" font-size="12" fill="{t['muted']}">Every row in OrderItems would go.</text>
+<rect x="310" y="202" width="92" height="30" rx="8" fill="#1B6FD1"/>
+<text class="sans" x="356" y="221.5" font-size="12.5" font-weight="600" text-anchor="middle" fill="#fff">Cancel</text>
+<rect x="412" y="202" width="118" height="30" rx="8" fill="none" stroke="{danger}" stroke-width="1.3"/>
+<text class="sans" x="471" y="221.5" font-size="12.5" font-weight="600" text-anchor="middle" fill="{danger}">Run anyway</text>
+</g>
+'''
+    return frame(t, 600, 300, 20, body, css, "", glows,
+                 title="vscode-sql-guard: a confirmation dialog stopping a DELETE that has no WHERE clause",
+                 reduced=".flag,.dlg{opacity:1}", fade=(0.5, 0.5))
+
+
 # name -> (builder, themed?). Unthemed images are written once.
 ASSETS = {
     "wave-header": (wave_header, False),
@@ -539,6 +587,7 @@ ASSETS = {
     "hooktrans": (thumb_hooktrans, True),
     "api-to-model": (thumb_api_to_model, True),
     "file-order": (thumb_file_order, True),
+    "sql-guard": (thumb_sql_guard, True),
 }
 
 if __name__ == "__main__":

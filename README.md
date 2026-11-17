@@ -18,7 +18,7 @@
 
 <table>
 <tr>
-<td colspan="3" width="50%" valign="middle">
+<td width="50%" valign="middle">
   <a href="https://github.com/Potterjr/extendedscreen">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/extendedscreen-dark.svg">
@@ -27,7 +27,7 @@
     </picture>
   </a>
 </td>
-<td colspan="3" width="50%" valign="middle">
+<td width="50%" valign="middle">
   <h3><a href="https://github.com/Potterjr/extendedscreen">extendedscreen</a></h3>
   Use an Android tablet as a second display for a Mac over USB.
   <br><br>
@@ -37,7 +37,7 @@
 </td>
 </tr>
 <tr>
-<td colspan="2" width="33%" align="center" valign="top">
+<td width="50%" align="center" valign="top">
   <a href="https://github.com/Potterjr/hooktrans">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/hooktrans-dark.svg">
@@ -52,7 +52,24 @@
   <br>
   <sub>Flutter · Apple Vision OCR · LM Studio</sub>
 </td>
-<td colspan="2" width="33%" align="center" valign="top">
+<td width="50%" align="center" valign="top">
+  <a href="https://github.com/Potterjr/vscode-sql-guard">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/sql-guard-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="assets/sql-guard-light.svg">
+      <img src="assets/sql-guard-dark.svg" width="100%" alt="A confirmation dialog stopping a DELETE that has no WHERE clause" />
+    </picture>
+  </a>
+  <br>
+  <a href="https://github.com/Potterjr/vscode-sql-guard"><b>vscode-sql-guard</b></a>
+  <br>
+  VS Code extension: asks before an UPDATE or DELETE with no WHERE, a DROP or a TRUNCATE runs against SQL Server.
+  <br>
+  <sub>JavaScript · VS Code API · node:test</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center" valign="top">
   <a href="https://github.com/Potterjr/api-to-model">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/api-to-model-dark.svg">
@@ -67,7 +84,7 @@
   <br>
   <sub>TypeScript · VS Code API · Jest</sub>
 </td>
-<td colspan="2" width="33%" align="center" valign="top">
+<td width="50%" align="center" valign="top">
   <a href="https://github.com/Potterjr/file-order">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/file-order-dark.svg">
@@ -94,7 +111,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/about-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/about-light.svg">
-    <img src="assets/about-dark.svg" width="66%" alt="about_me.dart. class Chisanupong extends MobileDeveloper. Based in Bangkok, Thailand. Day job: WMS apps in Flutter, plus .NET services and SQL. Side projects: extendedscreen, hooktrans, api-to-model, file-order." />
+    <img src="assets/about-dark.svg" width="66%" alt="about_me.dart. class Chisanupong extends MobileDeveloper. Based in Bangkok, Thailand. Day job: WMS apps in Flutter, plus .NET services and SQL. Side projects: extendedscreen, hooktrans, api-to-model, file-order, sql-guard." />
   </picture>
   <img src="assets/phone.svg" width="32%" alt="A phone showing a warehouse pick list that scans a barcode and ticks items off" />
 </p>

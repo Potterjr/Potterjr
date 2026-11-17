@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300" role="img" aria-label="vscode-sql-guard: a confirmation dialog stopping a DELETE that has no WHERE clause">
+<title>vscode-sql-guard: a confirmation dialog stopping a DELETE that has no WHERE clause</title>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0A0F1F"/><stop offset="1" stop-color="#121A3C"/></linearGradient>
+<linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4FC3F7"/><stop offset="1" stop-color="#8B6CFF"/></linearGradient>
+<linearGradient id="accentD" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4FC3F7"/><stop offset="1" stop-color="#8B6CFF"/></linearGradient>
+<radialGradient id="glowA"><stop offset="0" stop-color="#4FC3F7" stop-opacity="0.26"/><stop offset="1" stop-color="#4FC3F7" stop-opacity="0"/></radialGradient>
+<radialGradient id="glowB"><stop offset="0" stop-color="#8B6CFF" stop-opacity="0.34"/><stop offset="1" stop-color="#8B6CFF" stop-opacity="0"/></radialGradient>
+<pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#FFFFFF" fill-opacity="0.07"/></pattern>
+<radialGradient id="fade" cx="0.5" cy="0.5" r=".75"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<mask id="gridMask"><rect width="600" height="300" fill="url(#fade)"/></mask>
+<clipPath id="frame"><rect width="600" height="300" rx="20"/></clipPath>
+
+</defs>
+<style>
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+.flag{opacity:0;animation:flag 7s ease-out infinite}@keyframes flag{0%,12%{opacity:0}18%,86%{opacity:1}92%,100%{opacity:0}}.dlg{opacity:0;animation:dlg 7s ease-out infinite}@keyframes dlg{0%,20%{opacity:0;transform:translateY(8px)}27%,86%{opacity:1;transform:translateY(0)}92%,100%{opacity:0;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.flag,.dlg{opacity:1}}
+</style>
+<g clip-path="url(#frame)">
+<rect width="600" height="300" fill="url(#bg)"/>
+<circle cx="520" cy="40" r="230" fill="url(#glowB)"/><circle cx="70" cy="290" r="200" fill="url(#glowA)"/>
+<rect width="600" height="300" fill="url(#dots)" mask="url(#gridMask)"/>
+
+<rect x="36" y="34" width="528" height="232" rx="12" fill="#0D1432" stroke="#2A3566"/>
+<circle cx="57" cy="53" r="4" fill="#4FC3F7"/>
+<text class="mono" x="68" y="57" font-size="12" font-weight="700" fill="#F4F7FF">cleanup.sql</text>
+<path d="M36 70.5H564" stroke="#2A3566"/>
+<text class="mono" x="58" y="90" font-size="11" fill="#93A0C8">▶ Run</text>
+<g class="flag"><rect x="37" y="189" width="526" height="24" fill="#FF6B6B" fill-opacity=".14"/><rect x="37" y="189" width="3" height="24" fill="#FF6B6B"/></g>
+<text class="mono l0" x="58.0" y="110" font-size="14"><tspan fill="#93A0C8">-- #region archive old orders</tspan></text><text class="mono l1" x="58.0" y="134" font-size="14"><tspan fill="#8B6CFF">UPDATE</tspan><tspan fill="#F4F7FF"> Orders</tspan><tspan fill="#8B6CFF"> SET</tspan><tspan fill="#F4F7FF"> Status</tspan><tspan fill="#93A0C8"> = </tspan><tspan fill="#3DDC97">'archived'</tspan></text><text class="mono l2" x="58.0" y="158" font-size="14"><tspan fill="#8B6CFF">WHERE</tspan><tspan fill="#F4F7FF"> CreatedAt</tspan><tspan fill="#93A0C8"> &lt; </tspan><tspan fill="#3DDC97">'2025-01-01'</tspan><tspan fill="#93A0C8">;</tspan></text><text class="mono l3" x="58.0" y="182" font-size="14"></text><text class="mono l4" x="58.0" y="206" font-size="14"><tspan fill="#8B6CFF">DELETE</tspan><tspan fill="#8B6CFF"> FROM</tspan><tspan fill="#F4F7FF"> OrderItems</tspan><tspan fill="#93A0C8">;</tspan></text><text class="mono l5" x="58.0" y="230" font-size="14"><tspan fill="#93A0C8">-- #endregion</tspan></text>
+<g class="dlg">
+<rect x="266" y="134" width="286" height="122" rx="12" fill="#000" fill-opacity=".28"/>
+<rect x="262" y="128" width="286" height="122" rx="12" fill="#0D1432" stroke="#FF6B6B" stroke-width="1.5"/>
+<g transform="translate(280 144)" fill="none" stroke="#FFC857" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 1.5l7 2.6v5.2c0 4.3-2.9 7.6-7 9.2-4.1-1.6-7-4.9-7-9.2V4.1z" fill="#FFC857" fill-opacity=".16"/><path d="M10 6.5v4.5M10 14v.1"/></g>
+<text class="sans" x="310" y="159" font-size="14.5" font-weight="700" fill="#F4F7FF">DELETE without WHERE</text>
+<text class="sans" x="310" y="180" font-size="12" fill="#93A0C8">Every row in OrderItems would go.</text>
+<rect x="310" y="202" width="92" height="30" rx="8" fill="#1B6FD1"/>
+<text class="sans" x="356" y="221.5" font-size="12.5" font-weight="600" text-anchor="middle" fill="#fff">Cancel</text>
+<rect x="412" y="202" width="118" height="30" rx="8" fill="none" stroke="#FF6B6B" stroke-width="1.3"/>
+<text class="sans" x="471" y="221.5" font-size="12.5" font-weight="600" text-anchor="middle" fill="#FF6B6B">Run anyway</text>
+</g>
+
+</g>
+<rect x=".5" y=".5" width="599" height="299" rx="19.5" fill="none" stroke="#27315C"/>
+</svg>
