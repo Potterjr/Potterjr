@@ -99,15 +99,15 @@
 
 <br>
 
-## 👾 Pac-Man Contribution Graph
+## 🚚 Shipping Log
 
-> *Waka waka! Pac-Man eats my commits. I keep making more.*
+> *My last year of commits, stacked on a warehouse floor. One box per day; the taller the stack, the busier the day.*
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Potterjr/Potterjr/output/pacman-contribution-graph-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Potterjr/Potterjr/output/pacman-contribution-graph.svg">
-    <img alt="Pac-Man eating my GitHub contribution graph" src="https://raw.githubusercontent.com/Potterjr/Potterjr/output/pacman-contribution-graph.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Potterjr/Potterjr/output/contributions-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Potterjr/Potterjr/output/contributions-light.svg">
+    <img width="100%" alt="My GitHub contributions over the last year, drawn as stacks of boxes on a warehouse floor" src="https://raw.githubusercontent.com/Potterjr/Potterjr/output/contributions-dark.svg">
   </picture>
 </div>
 
