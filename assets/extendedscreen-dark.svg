@@ -33,7 +33,7 @@
 <rect x="400" y="100" width="144" height="100" rx="5" fill="#0D1330"/><rect x="400" y="100" width="144" height="100" rx="5" fill="url(#wall)"/>
 <g clip-path="url(#tab)"><g class="slide"><g transform="translate(184 112)"><rect width="112" height="70" rx="7" fill="#F4F7FF"/><path d="M0 7a7 7 0 0 1 7-7h98a7 7 0 0 1 7 7v9H0z" fill="#DCE3F7"/><circle cx="10" cy="8" r="2.5" fill="#FF6B6B"/><circle cx="19" cy="8" r="2.5" fill="#FFC857"/><circle cx="28" cy="8" r="2.5" fill="#3DDC97"/><rect x="10" y="26" width="58" height="6" rx="3" fill="#8B6CFF"/><rect x="10" y="38" width="92" height="5" rx="2.5" fill="#C3CCE8"/><rect x="10" y="48" width="76" height="5" rx="2.5" fill="#C3CCE8"/><rect x="10" y="58" width="40" height="5" rx="2.5" fill="#C3CCE8"/></g></g></g>
 <path class="flow" d="M346 235C400 272 472 270 472 210" fill="none" stroke="url(#accent)" stroke-width="2.5" stroke-dasharray="5 7" stroke-linecap="round"/>
-<text class="mono" x="404" y="284" font-size="12" text-anchor="middle" fill="#5D6A95">USB · H.264 / H.265</text>
+<text class="mono" x="404" y="284" font-size="12" text-anchor="middle" fill="#8791BD">USB · H.264 / H.265</text>
 
 </g>
 <rect x=".5" y=".5" width="599" height="299" rx="19.5" fill="none" stroke="#27315C"/>

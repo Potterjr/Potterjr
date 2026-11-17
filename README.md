@@ -8,25 +8,13 @@
 </p>
 
 <!-- Stack, in the order I reach for it: mobile, backend, tooling -->
-<img src="https://skillicons.dev/icons?i=flutter,dart,swift,kotlin,dotnet,cs,ts,vscode,git,github&perline=10" alt="Flutter, Dart, Swift, Kotlin, .NET, C#, TypeScript, VS Code, Git, GitHub" />
+<img src="https://skillicons.dev/icons?i=flutter,dart,swift,kotlin,dotnet,cs,ts,vscode,git,github&perline=10" height="48" alt="Flutter, Dart, Swift, Kotlin, .NET, C#, TypeScript, VS Code, Git, GitHub" />
 
 </div>
 
 <br>
 
-<!-- About me: the code on the left, running on the phone on the right -->
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/about-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/about-light.svg">
-    <img src="assets/about-dark.svg" width="66%" alt="about_me.dart. class Chisanupong extends MobileDeveloper. Based in Bangkok, Thailand. Day job: WMS apps in Flutter, plus .NET services and SQL. Side projects: extendedscreen, hooktrans, api-to-model, file-order." />
-  </picture>
-  <img src="assets/phone.svg" width="32%" alt="A phone showing a warehouse pick list that scans a barcode and ticks items off" />
-</p>
-
-<br>
-
-## 📦 Featured Projects
+## <img src="assets/icon-projects.svg" width="24" height="24" align="absmiddle" alt="" /> Featured Projects
 
 <table>
 <tr>
@@ -99,15 +87,29 @@
 
 <br>
 
-## 🚚 Shipping Log
+## <img src="assets/icon-about.svg" width="24" height="24" align="absmiddle" alt="" /> About Me
 
-> *My last year of commits, stacked on a warehouse floor. One box per day; the taller the stack, the busier the day.*
+<!-- The code on the left, running on the phone on the right -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/about-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/about-light.svg">
+    <img src="assets/about-dark.svg" width="66%" alt="about_me.dart. class Chisanupong extends MobileDeveloper. Based in Bangkok, Thailand. Day job: WMS apps in Flutter, plus .NET services and SQL. Side projects: extendedscreen, hooktrans, api-to-model, file-order." />
+  </picture>
+  <img src="assets/phone.svg" width="32%" alt="A phone showing a warehouse pick list that scans a barcode and ticks items off" />
+</p>
+
+<br>
+
+## <img src="assets/icon-log.svg" width="24" height="24" align="absmiddle" alt="" /> Shipping Log
+
+> *My last six months of commits, stacked on a warehouse floor. One box per day; the taller the stack, the busier the day.*
 
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Potterjr/Potterjr/output/contributions-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Potterjr/Potterjr/output/contributions-light.svg">
-    <img width="100%" alt="My GitHub contributions over the last year, drawn as stacks of boxes on a warehouse floor" src="https://raw.githubusercontent.com/Potterjr/Potterjr/output/contributions-dark.svg">
+    <img width="100%" alt="My GitHub contributions over the last six months, drawn as stacks of boxes on a warehouse floor" src="https://raw.githubusercontent.com/Potterjr/Potterjr/output/contributions-dark.svg">
   </picture>
 </div>
 
@@ -115,11 +117,11 @@
 
 <div align="center">
 
-## 🤝 Let's Work Together
+## <img src="assets/icon-contact.svg" width="24" height="24" align="absmiddle" alt="" /> Let's Work Together
 
 Building something in Flutter, or need a mobile developer who is comfortable on the backend too?<br>I'd like to hear about it.
 
-<a href="https://github.com/Potterjr?tab=repositories"><img src="https://img.shields.io/badge/See_my_repositories-02569B?style=for-the-badge&logo=github&logoColor=white" alt="See my repositories" /></a>
+<a href="https://github.com/Potterjr?tab=repositories"><img src="assets/cta-repos.svg" height="44" alt="See my repositories" /></a>
 
 </div>
 

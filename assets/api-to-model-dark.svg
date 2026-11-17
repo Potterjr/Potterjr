@@ -26,12 +26,11 @@
 <rect x="26" y="36" width="246" height="228" rx="12" fill="#0D1432" stroke="#2A3566"/>
 <text class="mono" x="44" y="60" font-size="12" font-weight="700" fill="#F4F7FF">cURL</text>
 <rect x="42" y="69" width="34" height="2" rx="1" fill="url(#accent)"/>
-<text class="mono" x="94" y="60" font-size="12" fill="#5D6A95">JSON</text>
+<text class="mono" x="94" y="60" font-size="12" fill="#8791BD">JSON</text>
 <path d="M26 70.5H272" stroke="#2A3566"/>
 <text class="mono" x="44" y="98" font-size="13"><tspan fill="#4FC3F7" font-weight="700">›</tspan><tspan fill="#F4F7FF"> curl api.dev/users/1</tspan></text>
 <path d="M44 112.5H254" stroke="#2A3566" stroke-dasharray="2 4"/>
 <text class="mono l0" x="44.0" y="138" font-size="13"><tspan fill="#93A0C8">{</tspan></text><text class="mono l1" x="59.6" y="160" font-size="13"><tspan fill="#4FC3F7">"id"</tspan><tspan fill="#93A0C8">: </tspan><tspan fill="#8B6CFF">1</tspan><tspan fill="#93A0C8">,</tspan></text><text class="mono l2" x="59.6" y="182" font-size="13"><tspan fill="#4FC3F7">"name"</tspan><tspan fill="#93A0C8">: </tspan><tspan fill="#3DDC97">"Ada"</tspan><tspan fill="#93A0C8">,</tspan></text><text class="mono l3" x="59.6" y="204" font-size="13"><tspan fill="#4FC3F7">"active"</tspan><tspan fill="#93A0C8">: </tspan><tspan fill="#8B6CFF">true</tspan></text><text class="mono l4" x="44.0" y="226" font-size="13"><tspan fill="#93A0C8">}</tspan></text>
-<circle cx="300" cy="150" r="18" fill="none" stroke="#8B6CFF" stroke-width="1.5"><animate attributeName="r" values="18;28" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".6;0" dur="2s" repeatCount="indefinite"/></circle>
 <circle cx="300" cy="150" r="18" fill="url(#accent)"/>
 <path d="M292.5 150h14m-5.5-5.5 5.5 5.5-5.5 5.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="328" y="36" width="246" height="228" rx="12" fill="#0D1432" stroke="#2A3566"/>

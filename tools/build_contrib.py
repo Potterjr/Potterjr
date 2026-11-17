@@ -21,19 +21,22 @@ QUERY = (
 )
 LEVELS = ["NONE", "FIRST_QUARTILE", "SECOND_QUARTILE", "THIRD_QUARTILE", "FOURTH_QUARTILE"]
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+WEEKS = 26                  # half a year: large enough boxes to read at README width
 
 # Box colour per level, quiet to busy. Dark theme gets brighter, light theme gets deeper.
+# Every level keeps at least 3:1 against its card, so a quiet day is still visible.
 PALETTE = {
-    "dark": dict(floor="#161F47", floor_edge="#263163", boxes=["#1F6496", "#1E8FD3", "#3DBBF7", "#9AE6FF"], top=0.30, side=0.34),
-    "light": dict(floor="#E6ECFA", floor_edge="#CFD8F0", boxes=["#A6D6F4", "#55B5EA", "#1689D0", "#02569B"], top=0.38, side=0.20),
+    "dark": dict(floor="#161F47", floor_edge="#2A3670", boxes=["#2A7CB8", "#2E9BE0", "#57C4F8", "#B5ECFF"], top=0.30, side=0.34),
+    "light": dict(floor="#E6ECFA", floor_edge="#C9D3EE", boxes=["#2D8DCF", "#1B7BC0", "#0B5C9E", "#033B6E"], top=0.38, side=0.20),
 }
 
-W, H = 846, 200
-X0, Y0 = 26.0, 164.0        # front-left corner of the first column, front row
-BOX_W = 9.0                 # box width on screen
-DEPTH = 5.2                 # how far a box reaches back (same in x and y)
-ROW = 7.0                   # step from one weekday row to the one behind it
-HEIGHTS = [0, 7, 15, 25, 38]
+W, H = 846, 242
+X0, Y0 = 26.0, 206.0        # front-left corner of the first column, front row
+BOX_W = 16.0                # box width on screen
+DEPTH = 9.0                 # how far a box reaches back (same in x and y)
+ROW = 11.5                  # step from one weekday row to the one behind it
+HEIGHTS = [0, 10, 22, 36, 52]
+LABEL = 12                  # smallest text on the card, in px at README width
 
 
 def fetch(login):
@@ -56,12 +59,13 @@ def pts(*points):
 
 def draw(weeks, theme):
     t, p = THEMES[theme], PALETTE[theme]
-    pitch = min(14.4, (W - X0 - BOX_W - DEPTH - 6 * ROW - 18) / max(1, len(weeks) - 1))
+    weeks = weeks[-WEEKS:]
+    pitch = (W - X0 - BOX_W - DEPTH - 6 * ROW - 18) / max(1, len(weeks) - 1)
 
-    css = [f".z{{fill:{p['floor']};stroke:{p['floor_edge']};stroke-width:.6}}"]
+    css = [f".z{{fill:{p['floor']};stroke:{p['floor_edge']};stroke-width:.8}}"]
     for i, c in enumerate(p["boxes"], start=1):
         css.append(f".f{i}{{fill:{c}}}.u{i}{{fill:{mix(c, '#FFFFFF', p['top'])}}}.s{i}{{fill:{mix(c, '#000000', p['side'])}}}")
-    css.append(".scan{animation:scan 9s linear infinite}@keyframes scan{from{transform:translateX(-70px)}to{transform:translateX(870px)}}")
+    css.append(".scan{animation:scan 9s linear infinite}@keyframes scan{from{transform:translateX(-110px)}to{transform:translateX(880px)}}")
 
     # Paint back to front: Sunday is the back row, Saturday the front row.
     cells = []
@@ -87,38 +91,39 @@ def draw(weeks, theme):
     for w, week in enumerate(weeks):
         month = int(week["contributionDays"][0]["date"][5:7])
         x = X0 + w * pitch
-        if month != last_month and x - last_x > 30:
-            labels.append(f'<text class="mono" x="{x:.1f}" y="{Y0 + 18}" font-size="10.5" fill="{t["faint"]}">{MONTHS[month - 1]}</text>')
+        if month != last_month and x - last_x > 40:
+            labels.append(f'<text class="mono" x="{x:.1f}" y="{Y0 + 22}" font-size="{LABEL}" fill="{t["faint"]}">{MONTHS[month - 1]}</text>')
             last_x = x
         last_month = month
 
-    legend_x = W - 26 - 5 * 13 - 34
-    legend = f'<text class="mono" x="{legend_x - 8}" y="31" font-size="10.5" text-anchor="end" fill="{t["faint"]}">less</text>'
-    legend += f'<rect class="z" x="{legend_x}" y="22" width="10" height="10" rx="1.5"/>'
+    step = 16
+    legend_x = W - 26 - 5 * step - 38
+    legend = f'<text class="mono" x="{legend_x - 8}" y="35" font-size="{LABEL}" text-anchor="end" fill="{t["faint"]}">less</text>'
+    legend += f'<rect class="z" x="{legend_x}" y="24" width="12" height="12" rx="2"/>'
     for i in range(1, 5):
-        legend += f'<rect class="f{i}" x="{legend_x + i * 13}" y="22" width="10" height="10" rx="1.5"/>'
-    legend += f'<text class="mono" x="{legend_x + 5 * 13 + 6}" y="31" font-size="10.5" fill="{t["faint"]}">more</text>'
+        legend += f'<rect class="f{i}" x="{legend_x + i * step}" y="24" width="12" height="12" rx="2"/>'
+    legend += f'<text class="mono" x="{legend_x + 5 * step + 4}" y="35" font-size="{LABEL}" fill="{t["faint"]}">more</text>'
 
     # A scanner plane that sweeps the floor from left to right.
-    reach = 6 * ROW + DEPTH + 6
-    sx, sy = 0.0, Y0 + 5
+    reach = 6 * ROW + DEPTH + 8
+    sx, sy, tall = 0.0, Y0 + 6, 74
     scan = (
         f'<g class="scan">'
-        f'<polygon points="{pts((sx, sy), (sx + reach, sy - reach), (sx + reach, sy - reach - 46), (sx, sy - 46))}" fill="url(#beam)"/>'
-        f'<path d="M{sx:.1f} {sy:.1f}l{reach:.1f} {-reach:.1f}" stroke="{t["a"]}" stroke-width="1.6" stroke-linecap="round"/>'
+        f'<polygon points="{pts((sx, sy), (sx + reach, sy - reach), (sx + reach, sy - reach - tall), (sx, sy - tall))}" fill="url(#beam)"/>'
+        f'<path d="M{sx:.1f} {sy:.1f}l{reach:.1f} {-reach:.1f}" stroke="{t["a"]}" stroke-width="1.8" stroke-linecap="round"/>'
         f"</g>"
     )
     defs = (
-        f'<linearGradient id="beam" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="{t["a"]}" stop-opacity=".38"/>'
+        f'<linearGradient id="beam" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="{t["a"]}" stop-opacity=".34"/>'
         f'<stop offset="1" stop-color="{t["a"]}" stop-opacity="0"/></linearGradient>'
     )
-    glows = '<circle cx="770" cy="-10" r="230" fill="url(#glowB)"/><circle cx="50" cy="190" r="210" fill="url(#glowA)"/>'
+    glows = '<circle cx="770" cy="-10" r="260" fill="url(#glowB)"/><circle cx="50" cy="250" r="240" fill="url(#glowA)"/>'
     body = (
-        f'<text class="mono" x="26" y="31" font-size="10.5" fill="{t["muted"]}">one box per day · a taller stack is a busier day</text>'
+        f'<text class="mono" x="26" y="35" font-size="{LABEL}" fill="{t["muted"]}">one box per day · last {len(weeks)} weeks · a taller stack is a busier day</text>'
         + legend + "".join(cells) + "".join(labels) + scan
     )
-    return frame(t, W, H, 16, body, "".join(css), defs, glows,
-                 title="My GitHub contributions over the last year, drawn as stacks of boxes on a warehouse floor",
+    return frame(t, W, H, 20, body, "".join(css), defs, glows,
+                 title="My GitHub contributions over the last six months, drawn as stacks of boxes on a warehouse floor",
                  reduced=".scan{display:none}", fade=(0.5, 0.2))
 
 

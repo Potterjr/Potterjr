@@ -2,20 +2,20 @@
 <title>about_me.dart. class Chisanupong extends MobileDeveloper. Based in Bangkok, Thailand. Day job: WMS apps in Flutter, plus .NET services and SQL. Side projects: extendedscreen, hooktrans, api-to-model, file-order.</title>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EAF0FF"/></linearGradient>
-<linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0288D1"/><stop offset="1" stop-color="#6A3DF5"/></linearGradient>
+<linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0369A1"/><stop offset="1" stop-color="#6A3DF5"/></linearGradient>
 <linearGradient id="accentD" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4FC3F7"/><stop offset="1" stop-color="#8B6CFF"/></linearGradient>
-<radialGradient id="glowA"><stop offset="0" stop-color="#0288D1" stop-opacity="0.14"/><stop offset="1" stop-color="#0288D1" stop-opacity="0"/></radialGradient>
+<radialGradient id="glowA"><stop offset="0" stop-color="#0369A1" stop-opacity="0.14"/><stop offset="1" stop-color="#0369A1" stop-opacity="0"/></radialGradient>
 <radialGradient id="glowB"><stop offset="0" stop-color="#6A3DF5" stop-opacity="0.16"/><stop offset="1" stop-color="#6A3DF5" stop-opacity="0"/></radialGradient>
 <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#0B1228" fill-opacity="0.07"/></pattern>
 <radialGradient id="fade" cx="0.8" cy="0.3" r=".75"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
 <mask id="gridMask"><rect width="800" height="452" fill="url(#fade)"/></mask>
-<clipPath id="frame"><rect width="800" height="452" rx="22"/></clipPath>
+<clipPath id="frame"><rect width="800" height="452" rx="20"/></clipPath>
 
 </defs>
 <style>
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
-.pulse{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}.blink{animation:blink 1.1s steps(1,end) infinite}@keyframes blink{0%{opacity:1}50%,100%{opacity:0}}
+.blink{animation:blink 1.1s steps(1,end) infinite}@keyframes blink{0%{opacity:1}50%,100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <g clip-path="url(#frame)">
@@ -24,19 +24,19 @@
 <rect width="800" height="452" fill="url(#dots)" mask="url(#gridMask)"/>
 
 <circle cx="28" cy="26" r="6" fill="#FF6B6B"/><circle cx="48" cy="26" r="6" fill="#FFC857"/><circle cx="68" cy="26" r="6" fill="#3DDC97"/>
-<rect x="96" y="11" width="176" height="30" rx="9" fill="#EEF2FF" stroke="#D3DBF0"/>
-<circle cx="113" cy="26" r="4.5" fill="#0288D1"/>
-<text class="mono" x="125" y="31" font-size="14" font-weight="600" fill="#0B1228">about_me.dart</text>
-<rect x="588" y="11" width="188" height="30" rx="15" fill="#EEF2FF" stroke="#D3DBF0"/>
-<circle class="pulse" cx="607" cy="26" r="4.5" fill="#0E9F6E"/>
-<text class="mono" x="620" y="30.5" font-size="13.5" fill="#55618A">running on device</text>
+<rect x="96" y="11" width="190" height="30" rx="9" fill="#EEF2FF" stroke="#D3DBF0"/>
+<circle cx="113" cy="26" r="4.5" fill="#0369A1"/>
+<text class="mono" x="125" y="32" font-size="17" font-weight="600" fill="#0B1228">about_me.dart</text>
+<rect x="552" y="11" width="224" height="30" rx="15" fill="#EEF2FF" stroke="#D3DBF0"/>
+<circle cx="572" cy="26" r="4.5" fill="#047857"/>
+<text class="mono" x="586" y="31.5" font-size="16.5" fill="#55618A">running on device</text>
 <path d="M0 52.5H800" stroke="#D3DBF0"/>
-<rect y="341" width="800" height="30" fill="#0288D1" fill-opacity=".08"/>
-<rect y="341" width="3" height="30" fill="#0288D1"/>
-<text class="mono" x="46" y="92" font-size="15" text-anchor="end" fill="#8D97B8">1</text><text class="mono" x="46" y="122" font-size="15" text-anchor="end" fill="#8D97B8">2</text><text class="mono" x="46" y="152" font-size="15" text-anchor="end" fill="#8D97B8">3</text><text class="mono" x="46" y="182" font-size="15" text-anchor="end" fill="#8D97B8">4</text><text class="mono" x="46" y="212" font-size="15" text-anchor="end" fill="#8D97B8">5</text><text class="mono" x="46" y="242" font-size="15" text-anchor="end" fill="#8D97B8">6</text><text class="mono" x="46" y="272" font-size="15" text-anchor="end" fill="#8D97B8">7</text><text class="mono" x="46" y="302" font-size="15" text-anchor="end" fill="#8D97B8">8</text><text class="mono" x="46" y="332" font-size="15" text-anchor="end" fill="#8D97B8">9</text><text class="mono" x="46" y="362" font-size="15" text-anchor="end" fill="#8D97B8">10</text><text class="mono" x="46" y="392" font-size="15" text-anchor="end" fill="#8D97B8">11</text>
-<text class="mono l0" x="66.0" y="92" font-size="20"><tspan fill="#6A3DF5">class</tspan><tspan fill="#0288D1"> Chisanupong</tspan><tspan fill="#6A3DF5"> extends</tspan><tspan fill="#0288D1"> MobileDeveloper</tspan><tspan fill="#55618A"> {</tspan></text><text class="mono l1" x="90.0" y="122" font-size="20"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0B1228"> base</tspan><tspan fill="#55618A"> = </tspan><tspan fill="#0E9F6E">'Bangkok, Thailand'</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l2" x="90.0" y="152" font-size="20"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0B1228"> dayJob</tspan><tspan fill="#55618A"> = </tspan><tspan fill="#0E9F6E">'WMS apps in Flutter'</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l3" x="90.0" y="182" font-size="20"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0B1228"> alsoOn</tspan><tspan fill="#55618A"> = </tspan><tspan fill="#0E9F6E">'.NET services + SQL'</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l4" x="90.0" y="212" font-size="20"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0B1228"> sideProjects</tspan><tspan fill="#55618A"> = [</tspan></text><text class="mono l5" x="114.0" y="242" font-size="20"><tspan fill="#0E9F6E">'extendedscreen'</tspan><tspan fill="#55618A">, </tspan><tspan fill="#0E9F6E">'hooktrans'</tspan><tspan fill="#55618A">,</tspan></text><text class="mono l6" x="114.0" y="272" font-size="20"><tspan fill="#0E9F6E">'api-to-model'</tspan><tspan fill="#55618A">, </tspan><tspan fill="#0E9F6E">'file-order'</tspan><tspan fill="#55618A">,</tspan></text><text class="mono l7" x="90.0" y="302" font-size="20"><tspan fill="#55618A">];</tspan></text><text class="mono l8" x="66.0" y="332" font-size="20"></text><text class="mono l9" x="90.0" y="362" font-size="20"><tspan fill="#0288D1">bool</tspan><tspan fill="#6A3DF5"> get</tspan><tspan fill="#0B1228"> openToCollab</tspan><tspan fill="#55618A"> =&gt; </tspan><tspan fill="#6A3DF5">true</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l10" x="66.0" y="392" font-size="20"><tspan fill="#55618A">}</tspan></text>
-<rect class="blink" x="454" y="345" width="10" height="23" rx="2" fill="#0288D1"/>
+<rect y="341" width="800" height="30" fill="#0369A1" fill-opacity=".08"/>
+<rect y="341" width="3" height="30" fill="#0369A1"/>
+<text class="mono" x="46" y="92" font-size="17" text-anchor="end" fill="#5F6A94">1</text><text class="mono" x="46" y="122" font-size="17" text-anchor="end" fill="#5F6A94">2</text><text class="mono" x="46" y="152" font-size="17" text-anchor="end" fill="#5F6A94">3</text><text class="mono" x="46" y="182" font-size="17" text-anchor="end" fill="#5F6A94">4</text><text class="mono" x="46" y="212" font-size="17" text-anchor="end" fill="#5F6A94">5</text><text class="mono" x="46" y="242" font-size="17" text-anchor="end" fill="#5F6A94">6</text><text class="mono" x="46" y="272" font-size="17" text-anchor="end" fill="#5F6A94">7</text><text class="mono" x="46" y="302" font-size="17" text-anchor="end" fill="#5F6A94">8</text><text class="mono" x="46" y="332" font-size="17" text-anchor="end" fill="#5F6A94">9</text><text class="mono" x="46" y="362" font-size="17" text-anchor="end" fill="#5F6A94">10</text><text class="mono" x="46" y="392" font-size="17" text-anchor="end" fill="#5F6A94">11</text>
+<text class="mono l0" x="66.0" y="92" font-size="20"><tspan fill="#6A3DF5">class</tspan><tspan fill="#0369A1"> Chisanupong</tspan><tspan fill="#6A3DF5"> extends</tspan><tspan fill="#0369A1"> MobileDeveloper</tspan><tspan fill="#55618A"> {</tspan></text><text class="mono l1" x="90.0" y="122" font-size="20"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0B1228"> base</tspan><tspan fill="#55618A"> = </tspan><tspan fill="#047857">'Bangkok, Thailand'</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l2" x="90.0" y="152" font-size="20"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0B1228"> dayJob</tspan><tspan fill="#55618A"> = </tspan><tspan fill="#047857">'WMS apps in Flutter'</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l3" x="90.0" y="182" font-size="20"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0B1228"> alsoOn</tspan><tspan fill="#55618A"> = </tspan><tspan fill="#047857">'.NET services + SQL'</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l4" x="90.0" y="212" font-size="20"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0B1228"> sideProjects</tspan><tspan fill="#55618A"> = [</tspan></text><text class="mono l5" x="114.0" y="242" font-size="20"><tspan fill="#047857">'extendedscreen'</tspan><tspan fill="#55618A">, </tspan><tspan fill="#047857">'hooktrans'</tspan><tspan fill="#55618A">,</tspan></text><text class="mono l6" x="114.0" y="272" font-size="20"><tspan fill="#047857">'api-to-model'</tspan><tspan fill="#55618A">, </tspan><tspan fill="#047857">'file-order'</tspan><tspan fill="#55618A">,</tspan></text><text class="mono l7" x="90.0" y="302" font-size="20"><tspan fill="#55618A">];</tspan></text><text class="mono l8" x="66.0" y="332" font-size="20"></text><text class="mono l9" x="90.0" y="362" font-size="20"><tspan fill="#0369A1">bool</tspan><tspan fill="#6A3DF5"> get</tspan><tspan fill="#0B1228"> openToCollab</tspan><tspan fill="#55618A"> =&gt; </tspan><tspan fill="#6A3DF5">true</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l10" x="66.0" y="392" font-size="20"><tspan fill="#55618A">}</tspan></text>
+<rect class="blink" x="454" y="345" width="10" height="23" rx="2" fill="#0369A1"/>
 
 </g>
-<rect x=".5" y=".5" width="799" height="451" rx="21.5" fill="none" stroke="#D3DBF0"/>
+<rect x=".5" y=".5" width="799" height="451" rx="19.5" fill="none" stroke="#D3DBF0"/>
 </svg>

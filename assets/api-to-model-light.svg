@@ -2,9 +2,9 @@
 <title>api-to-model: a cURL response turning into a Dart model class</title>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EAF0FF"/></linearGradient>
-<linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0288D1"/><stop offset="1" stop-color="#6A3DF5"/></linearGradient>
+<linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0369A1"/><stop offset="1" stop-color="#6A3DF5"/></linearGradient>
 <linearGradient id="accentD" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4FC3F7"/><stop offset="1" stop-color="#8B6CFF"/></linearGradient>
-<radialGradient id="glowA"><stop offset="0" stop-color="#0288D1" stop-opacity="0.14"/><stop offset="1" stop-color="#0288D1" stop-opacity="0"/></radialGradient>
+<radialGradient id="glowA"><stop offset="0" stop-color="#0369A1" stop-opacity="0.14"/><stop offset="1" stop-color="#0369A1" stop-opacity="0"/></radialGradient>
 <radialGradient id="glowB"><stop offset="0" stop-color="#6A3DF5" stop-opacity="0.16"/><stop offset="1" stop-color="#6A3DF5" stop-opacity="0"/></radialGradient>
 <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#0B1228" fill-opacity="0.07"/></pattern>
 <radialGradient id="fade" cx="0.5" cy="0.5" r=".75"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
@@ -26,19 +26,18 @@
 <rect x="26" y="36" width="246" height="228" rx="12" fill="#FFFFFF" stroke="#D3DBF0"/>
 <text class="mono" x="44" y="60" font-size="12" font-weight="700" fill="#0B1228">cURL</text>
 <rect x="42" y="69" width="34" height="2" rx="1" fill="url(#accent)"/>
-<text class="mono" x="94" y="60" font-size="12" fill="#8D97B8">JSON</text>
+<text class="mono" x="94" y="60" font-size="12" fill="#5F6A94">JSON</text>
 <path d="M26 70.5H272" stroke="#D3DBF0"/>
-<text class="mono" x="44" y="98" font-size="13"><tspan fill="#0288D1" font-weight="700">›</tspan><tspan fill="#0B1228"> curl api.dev/users/1</tspan></text>
+<text class="mono" x="44" y="98" font-size="13"><tspan fill="#0369A1" font-weight="700">›</tspan><tspan fill="#0B1228"> curl api.dev/users/1</tspan></text>
 <path d="M44 112.5H254" stroke="#D3DBF0" stroke-dasharray="2 4"/>
-<text class="mono l0" x="44.0" y="138" font-size="13"><tspan fill="#55618A">{</tspan></text><text class="mono l1" x="59.6" y="160" font-size="13"><tspan fill="#0288D1">"id"</tspan><tspan fill="#55618A">: </tspan><tspan fill="#6A3DF5">1</tspan><tspan fill="#55618A">,</tspan></text><text class="mono l2" x="59.6" y="182" font-size="13"><tspan fill="#0288D1">"name"</tspan><tspan fill="#55618A">: </tspan><tspan fill="#0E9F6E">"Ada"</tspan><tspan fill="#55618A">,</tspan></text><text class="mono l3" x="59.6" y="204" font-size="13"><tspan fill="#0288D1">"active"</tspan><tspan fill="#55618A">: </tspan><tspan fill="#6A3DF5">true</tspan></text><text class="mono l4" x="44.0" y="226" font-size="13"><tspan fill="#55618A">}</tspan></text>
-<circle cx="300" cy="150" r="18" fill="none" stroke="#6A3DF5" stroke-width="1.5"><animate attributeName="r" values="18;28" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".6;0" dur="2s" repeatCount="indefinite"/></circle>
+<text class="mono l0" x="44.0" y="138" font-size="13"><tspan fill="#55618A">{</tspan></text><text class="mono l1" x="59.6" y="160" font-size="13"><tspan fill="#0369A1">"id"</tspan><tspan fill="#55618A">: </tspan><tspan fill="#6A3DF5">1</tspan><tspan fill="#55618A">,</tspan></text><text class="mono l2" x="59.6" y="182" font-size="13"><tspan fill="#0369A1">"name"</tspan><tspan fill="#55618A">: </tspan><tspan fill="#047857">"Ada"</tspan><tspan fill="#55618A">,</tspan></text><text class="mono l3" x="59.6" y="204" font-size="13"><tspan fill="#0369A1">"active"</tspan><tspan fill="#55618A">: </tspan><tspan fill="#6A3DF5">true</tspan></text><text class="mono l4" x="44.0" y="226" font-size="13"><tspan fill="#55618A">}</tspan></text>
 <circle cx="300" cy="150" r="18" fill="url(#accent)"/>
 <path d="M292.5 150h14m-5.5-5.5 5.5 5.5-5.5 5.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="328" y="36" width="246" height="228" rx="12" fill="#FFFFFF" stroke="#D3DBF0"/>
-<circle cx="349" cy="56" r="4" fill="#0288D1"/>
+<circle cx="349" cy="56" r="4" fill="#0369A1"/>
 <text class="mono" x="360" y="60" font-size="12" font-weight="700" fill="#0B1228">user.dart</text>
 <path d="M328 70.5H574" stroke="#D3DBF0"/>
-<g class="out"><text class="mono l0" x="346.0" y="98" font-size="13"><tspan fill="#6A3DF5">class</tspan><tspan fill="#0288D1"> User </tspan><tspan fill="#55618A">{</tspan></text><text class="mono l1" x="361.6" y="120" font-size="13"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0288D1"> int</tspan><tspan fill="#0B1228"> id</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l2" x="361.6" y="142" font-size="13"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0288D1"> String</tspan><tspan fill="#0B1228"> name</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l3" x="361.6" y="164" font-size="13"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0288D1"> bool</tspan><tspan fill="#0B1228"> active</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l4" x="346.0" y="186" font-size="13"><tspan fill="#55618A">}</tspan></text></g>
+<g class="out"><text class="mono l0" x="346.0" y="98" font-size="13"><tspan fill="#6A3DF5">class</tspan><tspan fill="#0369A1"> User </tspan><tspan fill="#55618A">{</tspan></text><text class="mono l1" x="361.6" y="120" font-size="13"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0369A1"> int</tspan><tspan fill="#0B1228"> id</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l2" x="361.6" y="142" font-size="13"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0369A1"> String</tspan><tspan fill="#0B1228"> name</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l3" x="361.6" y="164" font-size="13"><tspan fill="#6A3DF5">final</tspan><tspan fill="#0369A1"> bool</tspan><tspan fill="#0B1228"> active</tspan><tspan fill="#55618A">;</tspan></text><text class="mono l4" x="346.0" y="186" font-size="13"><tspan fill="#55618A">}</tspan></text></g>
 <rect x="344" y="222" width="46.4" height="24" rx="12" fill="#EEF2FF" stroke="#D3DBF0"/><text class="mono" x="367.2" y="238" font-size="11" text-anchor="middle" fill="#55618A">Copy</text><rect x="398.4" y="222" width="59.6" height="24" rx="12" fill="#EEF2FF" stroke="#D3DBF0"/><text class="mono" x="428.2" y="238" font-size="11" text-anchor="middle" fill="#55618A">Insert</text><rect x="466.0" y="222" width="46.4" height="24" rx="12" fill="#EEF2FF" stroke="#D3DBF0"/><text class="mono" x="489.2" y="238" font-size="11" text-anchor="middle" fill="#55618A">Save</text>
 
 </g>

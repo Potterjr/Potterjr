@@ -17,7 +17,7 @@ MONO = "ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',m
 THEMES = {
     "dark": dict(
         bg0="#0A0F1F", bg1="#121A3C", border="#27315C",
-        text="#F4F7FF", muted="#93A0C8", faint="#5D6A95",
+        text="#F4F7FF", muted="#93A0C8", faint="#8791BD",
         dot="#FFFFFF", dot_o="0.07",
         a="#4FC3F7", b="#8B6CFF", green="#3DDC97",
         glow_a="0.26", glow_b="0.34",
@@ -25,9 +25,9 @@ THEMES = {
     ),
     "light": dict(
         bg0="#FFFFFF", bg1="#EAF0FF", border="#D3DBF0",
-        text="#0B1228", muted="#55618A", faint="#8D97B8",
+        text="#0B1228", muted="#55618A", faint="#5F6A94",
         dot="#0B1228", dot_o="0.07",
-        a="#0288D1", b="#6A3DF5", green="#0E9F6E",
+        a="#0369A1", b="#6A3DF5", green="#047857",
         glow_a="0.14", glow_b="0.16",
         card="#FFFFFF", card_border="#D3DBF0", chip="#EEF2FF", metal="#C4CDE8",
     ),
@@ -96,13 +96,16 @@ TYPED = [
     ("Dev tools on the side: VS Code extensions + more", 4.4),
     ("Based in Bangkok, Thailand", 4.0),
 ]
-FLUTTER_DEEP, FLUTTER_SKY = "#02569B", "#13B9FD"
+FLUTTER_DEEP, FLUTTER_SKY = "#023F78", "#0FA3EC"
+# SMIL ignores prefers-reduced-motion, so every animated shape has a still twin.
+STILL_CSS = ".still{display:none}@media (prefers-reduced-motion:reduce){.live{display:none}.still{display:inline}}"
 
 
 def _wave(d1, d2, dur, opacity=1):
     return (
-        f'<path fill="url(#g)" opacity="{opacity}" d="{d1}"><animate attributeName="d" dur="{dur}s" repeatCount="indefinite" '
+        f'<path class="live" fill="url(#g)" opacity="{opacity}" d="{d1}"><animate attributeName="d" dur="{dur}s" repeatCount="indefinite" '
         f'values="{d1};{d2};{d1}" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/></path>'
+        f'<path class="still" fill="url(#g)" opacity="{opacity}" d="{d1}"/>'
     )
 
 
@@ -115,21 +118,22 @@ def wave_header(_t):
     return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 270" width="1200" height="270" role="img" aria-label="{NAME}. {ROLE}">
 <title>{NAME}. {ROLE}</title>
 <defs>
-<linearGradient id="g" x1="0" y1="0" x2="1.25" y2="0"><stop offset="0" stop-color="{FLUTTER_DEEP}"/><stop offset="1" stop-color="{FLUTTER_SKY}"/></linearGradient>
+<linearGradient id="g" x1="0" y1="0" x2="1.4" y2="0"><stop offset="0" stop-color="{FLUTTER_DEEP}"/><stop offset="1" stop-color="{FLUTTER_SKY}"/></linearGradient>
 <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#fff" fill-opacity=".22"/></pattern>
 <radialGradient id="fade" cx=".9" cy="0" r=".55"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
 <radialGradient id="fade2" cx=".08" cy=".1" r=".4"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
 <mask id="m"><rect width="1200" height="170" fill="url(#fade)"/><rect width="1200" height="170" fill="url(#fade2)"/></mask>
-<clipPath id="top"><rect width="1200" height="400" rx="18"/></clipPath>
+<clipPath id="top"><rect width="1200" height="400" rx="20"/></clipPath>
 </defs>
-<style>.sans{{font-family:{SANS}}}.mono{{font-family:{MONO}}}</style>
+<style>.sans{{font-family:{SANS}}}.mono{{font-family:{MONO}}}{STILL_CSS}</style>
 <g clip-path="url(#top)">
 {_wave(back[0], back[1], 17, .38)}
 {_wave(front[0], front[1], 11)}
 <rect width="1200" height="170" fill="url(#dots)" mask="url(#m)"/>
 </g>
 <text class="sans" x="600" y="108" text-anchor="middle" font-size="68" font-weight="800" letter-spacing="-1.5" fill="#fff">{NAME}</text>
-{_typed(600, 147, 22, "#fff")}
+<g class="live">{_typed(600, 147, 22, "#fff")}</g>
+<text class="sans still" x="600" y="154" text-anchor="middle" font-size="23" font-weight="500" fill="#fff">{ROLE}</text>
 </svg>
 '''
 
@@ -141,9 +145,10 @@ def wave_footer(_t):
             "M0 130H1200V10C990 44 770 -4 570 22C380 46 180 6 0 50Z")
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 130" width="1200" height="130" role="presentation">
 <defs>
-<linearGradient id="g" x1="-.25" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{FLUTTER_SKY}"/><stop offset="1" stop-color="{FLUTTER_DEEP}"/></linearGradient>
-<clipPath id="bottom"><rect y="-300" width="1200" height="430" rx="18"/></clipPath>
+<linearGradient id="g" x1="-.4" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{FLUTTER_SKY}"/><stop offset="1" stop-color="{FLUTTER_DEEP}"/></linearGradient>
+<clipPath id="bottom"><rect y="-300" width="1200" height="430" rx="20"/></clipPath>
 </defs>
+<style>{STILL_CSS}</style>
 <g clip-path="url(#bottom)">
 {_wave(back[0], back[1], 17, .38)}
 {_wave(front[0], front[1], 11)}
@@ -191,23 +196,22 @@ def about(t):
     x0, y0, lh, size = 66, 92, 30, 20
     active = 9  # the line the cursor sits on
     nums = "".join(
-        f'<text class="mono" x="46" y="{y0 + i * lh}" font-size="15" text-anchor="end" fill="{t["faint"]}">{i + 1}</text>'
+        f'<text class="mono" x="46" y="{y0 + i * lh}" font-size="17" text-anchor="end" fill="{t["faint"]}">{i + 1}</text>'
         for i in range(len(lines))
     )
     cursor_x = x0 + (2 + len("bool get openToCollab => true;")) * size * 0.6 + 4
     css = (
-        ".pulse{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}"
         ".blink{animation:blink 1.1s steps(1,end) infinite}@keyframes blink{0%{opacity:1}50%,100%{opacity:0}}"
     )
     glows = '<circle cx="700" cy="50" r="300" fill="url(#glowB)"/><circle cx="80" cy="470" r="260" fill="url(#glowA)"/>'
     body = f'''
 <circle cx="28" cy="26" r="6" fill="#FF6B6B"/><circle cx="48" cy="26" r="6" fill="#FFC857"/><circle cx="68" cy="26" r="6" fill="#3DDC97"/>
-<rect x="96" y="11" width="176" height="30" rx="9" fill="{t['chip']}" stroke="{t['card_border']}"/>
+<rect x="96" y="11" width="190" height="30" rx="9" fill="{t['chip']}" stroke="{t['card_border']}"/>
 <circle cx="113" cy="26" r="4.5" fill="{t['a']}"/>
-<text class="mono" x="125" y="31" font-size="14" font-weight="600" fill="{t['text']}">about_me.dart</text>
-<rect x="588" y="11" width="188" height="30" rx="15" fill="{t['chip']}" stroke="{t['card_border']}"/>
-<circle class="pulse" cx="607" cy="26" r="4.5" fill="{t['green']}"/>
-<text class="mono" x="620" y="30.5" font-size="13.5" fill="{t['muted']}">running on device</text>
+<text class="mono" x="125" y="32" font-size="17" font-weight="600" fill="{t['text']}">about_me.dart</text>
+<rect x="552" y="11" width="224" height="30" rx="15" fill="{t['chip']}" stroke="{t['card_border']}"/>
+<circle cx="572" cy="26" r="4.5" fill="{t['green']}"/>
+<text class="mono" x="586" y="31.5" font-size="16.5" fill="{t['muted']}">running on device</text>
 <path d="M0 52.5H800" stroke="{t['card_border']}"/>
 <rect y="{y0 + active * lh - 21}" width="800" height="{lh}" fill="{t['a']}" fill-opacity=".08"/>
 <rect y="{y0 + active * lh - 21}" width="3" height="{lh}" fill="{t['a']}"/>
@@ -215,7 +219,7 @@ def about(t):
 {code(lines, x0, y0, lh, size, pal)}
 <rect class="blink" x="{cursor_x:.0f}" y="{y0 + active * lh - 17}" width="10" height="23" rx="2" fill="{t['a']}"/>
 '''
-    return frame(t, 800, 452, 22, body, css, "", glows,
+    return frame(t, 800, 452, 20, body, css, "", glows,
                  title="about_me.dart. class Chisanupong extends MobileDeveloper. Based in Bangkok, Thailand. "
                        "Day job: WMS apps in Flutter, plus .NET services and SQL. "
                        "Side projects: extendedscreen, hooktrans, api-to-model, file-order.",
@@ -269,7 +273,6 @@ def phone(_t):
         "40%,62%{transform:translateX(-100.8px)}65%,94%{transform:translateX(-67.2px)}98%,100%{transform:translateX(-168px)}}"
         ".scan{animation:scan 1.7s ease-in-out infinite alternate}@keyframes scan{from{transform:translateY(0)}to{transform:translateY(44px)}}"
         ".resp{animation:resp 2.7s linear infinite}@keyframes resp{0%,40%{opacity:.3}48%,100%{opacity:1}}"
-        ".float{animation:float 5s ease-in-out infinite alternate}@keyframes float{from{transform:translateY(0)}to{transform:translateY(-7px)}}"
     )
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 384" width="330" height="384" role="img" aria-label="A phone showing a warehouse pick list that scans a barcode and ticks items off">
 <defs>
@@ -299,12 +302,49 @@ def phone(_t):
 <g class="scan"><rect x="32" y="117" width="152" height="16" fill="url(#beam)"/><rect x="32" y="124" width="152" height="2" rx="1" fill="{D['a']}"/></g>
 {"".join(rows)}
 </g>
-<g class="float"><g transform="translate(8 266)">
+<g><g transform="translate(8 266)">
 <rect x="3" y="6" width="170" height="64" rx="13" fill="#000" fill-opacity=".28"/>
 <rect width="170" height="64" rx="13" fill="#0D1432" stroke="#2A3566"/>
 <text class="mono" x="15" y="27" font-size="12"><tspan fill="{D['b']}" font-weight="700">POST</tspan><tspan fill="{D['ink']}"> /pick/confirm</tspan></text>
 <text class="mono resp" x="15" y="48" font-size="12"><tspan fill="{D['green']}" font-weight="700">200 OK</tspan><tspan fill="{D['sub']}"> · 38 ms</tspan></text>
 </g></g>
+</svg>
+'''
+
+
+# ------------------------------------------------------------- icons + button
+
+# One stroke colour that reads on both GitHub themes (3.4:1 on white, 5.5:1 on dark).
+ICON_STROKE = "#1A8FE3"
+ICONS = {
+    "projects": '<path d="M12 2.6l8.4 4.7v9.4L12 21.4l-8.4-4.7V7.3z"/><path d="M3.6 7.3L12 12l8.4-4.7M12 12v9.4"/>',
+    "about": '<path d="M8.5 7.5L4 12l4.5 4.5M15.5 7.5L20 12l-4.5 4.5M13.4 5l-2.8 14"/>',
+    "log": '<path d="M4.4 16H2.6V6.4h10.6V16H8.6M13.2 9.4h3.9l3.3 3.5V16h-1.3M14.9 16H8.6"/>'
+           '<circle cx="6.5" cy="17" r="2.1"/><circle cx="17" cy="17" r="2.1"/>',
+    "contact": '<path d="M4.2 5h15.6a1.6 1.6 0 0 1 1.6 1.6v8.8a1.6 1.6 0 0 1-1.6 1.6H10.4L6 20.6V17H4.2a1.6 1.6 0 0 1-1.6-1.6V6.6A1.6 1.6 0 0 1 4.2 5z"/>'
+               '<path d="M7.2 9.4h9.6M7.2 12.8h5.8"/>',
+}
+
+
+def icon(name):
+    """Heading icon: one line weight and one colour for all of them."""
+    def build(_t):
+        return (
+            f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="{ICON_STROKE}" '
+            f'stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" role="presentation">{ICONS[name]}</svg>\n'
+        )
+    return build
+
+
+def cta(_t):
+    """The one primary button on the page. 48 units tall so it shows as a 44px touch target."""
+    w, h = 296, 48
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="See my repositories">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{FLUTTER_DEEP}"/><stop offset="1" stop-color="#0A7BC4"/></linearGradient></defs>
+<style>.sans{{font-family:{SANS}}}</style>
+<rect width="{w}" height="{h}" rx="{h // 2}" fill="url(#g)"/>
+<text class="sans" x="130" y="30" text-anchor="middle" font-size="17" font-weight="600" fill="#fff">See my repositories</text>
+<path d="M234 24h20m-7.500-7.500 7.500 7.500-7.500 7.500" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 '''
 
@@ -357,7 +397,6 @@ def thumb_hooktrans(t):
         "@keyframes th{0%,9%{opacity:0;transform:translateY(5px)}13%,46%{opacity:1;transform:translateY(0)}50%,100%{opacity:0;transform:translateY(0)}}"
         ".sweep{animation:sweep 5s linear infinite}@keyframes sweep{0%,2%{transform:translateX(0)}16%,100%{transform:translateX(500px)}}"
         ".ld{opacity:0;animation:ld 5s linear infinite}@keyframes ld{0%,3%{opacity:0}5%,17%{opacity:1}19%,100%{opacity:0}}"
-        ".tw{animation:tw 3s ease-in-out infinite alternate}@keyframes tw{from{opacity:.25}to{opacity:.9}}"
     )
     defs = (
         '<clipPath id="scene"><rect x="60" y="34" width="480" height="232" rx="14"/></clipPath>'
@@ -368,7 +407,7 @@ def thumb_hooktrans(t):
     )
     glows = '<circle cx="120" cy="40" r="220" fill="url(#glowB)"/><circle cx="520" cy="290" r="220" fill="url(#glowA)"/>'
     stars = "".join(
-        f'<circle class="tw" style="animation-delay:-{d}s" cx="{x}" cy="{y}" r="{r}" fill="#fff"/>'
+        f'<circle cx="{x}" cy="{y}" r="{r}" fill="#fff" fill-opacity=".7"/>'
         for x, y, r, d in [(96, 62, 1.4, 0.2), (150, 96, 1, 1.4), (214, 58, 1.6, 2.1), (286, 84, 1, 0.8), (338, 54, 1.3, 2.6), (392, 104, 1, 1.1), (506, 132, 1.2, 1.9), (520, 60, 1, 0.5)]
     )
     body = f'''
@@ -436,7 +475,6 @@ def thumb_api_to_model(t):
 <text class="mono" x="44" y="98" font-size="13"><tspan fill="{t['a']}" font-weight="700">›</tspan><tspan fill="{t['text']}"> curl api.dev/users/1</tspan></text>
 <path d="M44 112.5H254" stroke="{t['card_border']}" stroke-dasharray="2 4"/>
 {code(left, 44, 138, 22, 13, pal)}
-<circle cx="300" cy="150" r="18" fill="none" stroke="{t['b']}" stroke-width="1.5"><animate attributeName="r" values="18;28" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".6;0" dur="2s" repeatCount="indefinite"/></circle>
 <circle cx="300" cy="150" r="18" fill="url(#accent)"/>
 <path d="M292.5 150h14m-5.5-5.5 5.5 5.5-5.5 5.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="328" y="36" width="246" height="228" rx="12" fill="{t['card']}" stroke="{t['card_border']}"/>
@@ -492,6 +530,11 @@ ASSETS = {
     "wave-footer": (wave_footer, False),
     "about": (about, True),
     "phone": (phone, False),
+    "icon-projects": (icon("projects"), False),
+    "icon-about": (icon("about"), False),
+    "icon-log": (icon("log"), False),
+    "icon-contact": (icon("contact"), False),
+    "cta-repos": (cta, False),
     "extendedscreen": (thumb_extendedscreen, True),
     "hooktrans": (thumb_hooktrans, True),
     "api-to-model": (thumb_api_to_model, True),
